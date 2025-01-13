@@ -13,10 +13,17 @@ specified however the `pip-backtrack-bug-mre` toy repository depends on
 attempting to
 compile many versions of `scipy`.
 
+Create venv with updated pip:
+
 ```bash
 python -m venv .venv-bug
 source .venv-bug/bin/activate
 pip install --upgrade pip
+```
+
+attempt install:
+
+```
 pip install --only-binary :all: "numpy>=2" scipy git+https://github.com/k-collie/pip-backtrack-bug-mre.git
 ```
 
