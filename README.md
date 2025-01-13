@@ -8,8 +8,10 @@ from main.
 # Bug
 
 This involves trying to install an unsolveable set of packages. `numpy>=2` is
-specified however the toy repository depends on
-`numpy<2`.
+specified however the `pip-backtrack-bug-mre` toy repository depends on
+`numpy<2`. The `--only-binary :all:` argument is not related, it just prevents
+attempting to
+compile many versions of `scipy`.
 
 ```bash
 python -m venv .venv-bug
@@ -62,10 +64,10 @@ To fix this you could try to:
 ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
 ```
 
-The bug is that pip attempts to backtrack `scipy`, despite the first `scipy`
-version being compatible with `numpy>=2`. The error message then implies a
-conflict between `scipy` and `numpy>=2`, despite the true source of the
-conflict being between `numpy>=2` and the toy repository.
+The bug is that pip attempts to backtrack `scipy`, despite the first
+`scipy-1.15.1` version being compatible with `numpy>=2`. The error message then
+implies a conflict between `scipy` and `numpy>=2`, despite the true source of
+the conflict being between `numpy>=2` and the toy repository.
 
 
 # Working examples
