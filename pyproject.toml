@@ -1,0 +1,19 @@
+[project]
+name = "pip-backtrack-bug-mre"
+version = "0.1.0"
+description = "Toy repo for reproducing a pip backtracking bug"
+authors = [
+    {name = "Kingsley Collie", email = ""},
+]
+dependencies = ["numpy<2.0"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
